@@ -66,3 +66,70 @@ gitingest <source> [-o output] [-s max-size] [-e exclude] [-i include] [-b branc
 - Test runner: pytest with asyncio auto mode
 - Python path for tests: `src/`
 - Package uses setuptools with `pyproject.toml`
+
+## Installing the GitDigest Skill into Claude Code
+
+The `/gitdigest` skill lives in `.claude/skills/gitdigest/` in this repo. To install it as a **personal skill** available across all your projects:
+
+### Quick install (copy)
+
+```bash
+# Clone this repo (if you haven't already)
+git clone https://github.com/RichelynScott/GitDigest.git
+
+# Copy the skill into your personal Claude Code skills directory
+cp -r GitDigest/.claude/skills/gitdigest ~/.claude/skills/
+```
+
+### One-liner (no clone needed)
+
+```bash
+mkdir -p ~/.claude/skills/gitdigest && \
+curl -sL https://raw.githubusercontent.com/RichelynScott/GitDigest/main/.claude/skills/gitdigest/SKILL.md \
+  -o ~/.claude/skills/gitdigest/SKILL.md
+```
+
+### Verify installation
+
+```bash
+cat ~/.claude/skills/gitdigest/SKILL.md
+```
+
+You should see the YAML frontmatter with `name: gitdigest` at the top.
+
+### Install the gitingest Python package
+
+The skill will auto-install this on first run, but you can pre-install it:
+
+```bash
+# From PyPI
+pip install gitingest
+
+# Or from a local clone of this repo (editable mode)
+pip install -e /path/to/GitDigest
+```
+
+### How it works once installed
+
+- **Personal skills** in `~/.claude/skills/` are available in every Claude Code session on your machine.
+- Invoke it with `/gitdigest` in any Claude Code conversation.
+- Claude will also auto-trigger it when you ask to "digest a repo", "ingest a codebase", etc.
+
+### Skill scope reference
+
+| Location | Path | Scope |
+|----------|------|-------|
+| Personal (recommended) | `~/.claude/skills/gitdigest/SKILL.md` | All your projects |
+| Project-local | `<project>/.claude/skills/gitdigest/SKILL.md` | That project only |
+
+### Updating the skill
+
+To pull the latest version of the skill after updates:
+
+```bash
+# If you cloned the repo
+cd /path/to/GitDigest && git pull
+cp -r .claude/skills/gitdigest ~/.claude/skills/
+
+# Or re-run the one-liner above
+```
