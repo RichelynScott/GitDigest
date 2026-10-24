@@ -1,6 +1,6 @@
 # Fork customizations — GitDigest
 
-- Fork: https://github.com/RichelynScott/GitDigest.git; upstream: https://github.com/coderamp-labs/gitingest.git; branch checked: main @ 8dc3b88; upstream ref: upstream/main @ 4e259a0; merge-base: b098bb4; fork-only commits: 2; drafted by ollama-cloud/deepseek-v4.1-flash on 2026-10-24 (drafted by DeepSeek V4.1 Flash; reviewed by suni_3_n 2026-10-24)
+- Fork: https://github.com/RichelynScott/GitDigest.git; upstream: https://github.com/coderamp-labs/gitingest.git; branch checked: main @ 8dc3b88; upstream ref: upstream/main @ 4e259a0; merge-base: b098bb4; fork-only commits: 2; drafted by ollama-cloud/deepseek-v4.1-flash on 2026-10-24 (drafted by DeepSeek V4.1 Flash from cached upstream refs; header and spot rows checked by suni_3_n 2026-10-24, not a full review)
 - Expert skill: /home/richie/.hermes/skills/fork-management/gitdigest-docs-config-expert/SKILL.md (present, but its declared checkout `/home/riche/Proj/GitDigest` is stale — actual path is `/data/Proj/GitDigest`); .fork-sync.yml: absent
 
 Base refs used: `upstream/main` (only upstream remote-tracking ref; `git branch -r | grep upstream` → `upstream/main` alone). Merge-base `b098bb4` = upstream v0.3.1-era commit "Refactor/pydantic(#226)" dated 2025-03-11. Divergence: 2 non-merge fork commits + 1 merge (PR #1, 8dc3b88) ahead, 140 commits behind upstream/main. `origin/main` == `HEAD` == `8dc3b88`.
